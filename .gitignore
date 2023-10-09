@@ -1,0 +1,4 @@
+/venv/
+kaggle.json
+/raw_data/
+.DS_Store
