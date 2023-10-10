@@ -2,3 +2,4 @@
 kaggle.json
 /raw_data/
 .DS_Store
+**/__pycache__/
