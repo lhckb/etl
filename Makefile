@@ -2,7 +2,7 @@ freeze:
 	pip freeze > requirements.txt
 
 runetl1:
-	python3 etl_1.py
+	python3 job_1.py
 
 runetl2:
-	python3 etl_2.py
+	python3 job_2.py

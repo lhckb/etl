@@ -1,12 +1,11 @@
 from sqlalchemy import Column, Integer, String, BigInteger, Double, UUID, create_engine
 from sqlalchemy.ext.declarative import declarative_base
-import uuid
 
 database = "postgres"
 user = "postgres"
 host = "0.0.0.0"
 password = "password"
-port = 5433
+port = 5432
 
 conn_string = f"postgresql+psycopg2://{user}:{password}@{host}:{port}/{database}"
 
@@ -23,17 +22,27 @@ class DictionaryOlympics(Base):
   
 class SummerOlympics(Base):
     __tablename__ = 'summer_olympics'
+    year = Column(String(4))
+    city = Column(String)
+    sport = Column(String)
+    discipline = Column(String)
+    athlete = Column(String, primary_key=True)
     country = Column(String)
-    code = Column(String(3), primary_key=True, unique=True, nullable=False)
-    population = Column(BigInteger)
-    gdp_per_capita = Column(Double)
+    gender = Column(String)
+    event = Column(String)
+    medal = Column(String)
 
 class WinterOlympics(Base):
     __tablename__ = 'winter_olympics'
+    year = Column(String(4))
+    city = Column(String)
+    sport = Column(String)
+    discipline = Column(String)
+    athlete = Column(String, primary_key=True)
     country = Column(String)
-    code = Column(String(3), primary_key=True, unique=True, nullable=False)
-    population = Column(BigInteger)
-    gdp_per_capita = Column(Double)
+    gender = Column(String)
+    event = Column(String)
+    medal = Column(String)
 
 def createTables():
   Base.metadata.create_all(engine)
